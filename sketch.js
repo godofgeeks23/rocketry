@@ -4,9 +4,9 @@ let ground;
 const space_width = 1000;
 const space_height = 800;
 
-const ground_width = 500;
+const ground_width = 200;
 const ground_height = 15;
-const ground_color = "green";
+const ground_color = "lime";
 
 const rocket_x = space_width / 2;
 const rocket_y = 100;
@@ -47,8 +47,22 @@ function setup() {
     Matter.Runner.run(engine);
 }
 
+// thrust the rocket while spacebar is pressed and stop thrusting when it is released
+function keyReleased() {
+    if (keyCode === 32) {
+        Matter.Body.setVelocity(rocket.body, { x: 0, y: 0 });
+    }
+}
+
 function draw() {
     background("black");
     rocket.draw();
     ground.draw();
+
+    if(keyIsDown(32)) {
+        Matter.Body.applyForce(rocket.body, rocket.body.position, {
+            x: 0,
+            y: -0.005,
+        });
+    }
 }
