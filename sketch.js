@@ -68,6 +68,11 @@ function thrust_rocket() {
   Matter.Body.applyForce(rocket.body, rocket.body.position, thrust_force);
 
   // draw thrust indicator
+  paint_thruster();
+
+}
+
+function paint_thruster() {
   push();
   translate(rocket.body.position.x, rocket.body.position.y);
   rotate(rocket.body.angle);
@@ -97,7 +102,6 @@ function draw() {
     y: rocket.body.position.y - 100,
   };
   if (keyIsDown(LEFT_ARROW)) {
-    // apply force on rocket to tilt it
     Matter.Body.applyForce(rocket.body, torque_pos, { x: -0.001, y: 0 });
   } else if (keyIsDown(RIGHT_ARROW)) {
     Matter.Body.applyForce(rocket.body, torque_pos, { x: 0.001, y: 0 });
