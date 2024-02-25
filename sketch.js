@@ -15,7 +15,7 @@ const rocket_width = 20;
 const rocket_height = 150;
 const rocket_color = "white";
 
-// set gravity for world 
+// set gravity for world
 const gravity = 0.4;
 
 function setup() {
@@ -69,7 +69,6 @@ function thrust_rocket() {
 
   // draw thrust indicator
   paint_thruster();
-
 }
 
 function paint_thruster() {
