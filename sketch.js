@@ -56,7 +56,6 @@ function setup() {
     color: "orange",
   };
 
-  // run the engine
   Matter.Runner.run(engine);
 }
 
@@ -67,7 +66,6 @@ function thrust_rocket() {
   );
   Matter.Body.applyForce(rocket.body, rocket.body.position, thrust_force);
 
-  // draw thrust indicator
   paint_thruster();
 }
 
