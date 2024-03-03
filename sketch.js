@@ -59,6 +59,7 @@ function setup() {
   Matter.Runner.run(engine);
 }
 
+// apply thrust force to rocket
 function thrust_rocket() {
   let thrust_force = Matter.Vector.rotate(
     { x: 0, y: -0.005 },
@@ -69,6 +70,7 @@ function thrust_rocket() {
   paint_thruster();
 }
 
+// paint thruster
 function paint_thruster() {
   push();
   translate(rocket.body.position.x, rocket.body.position.y);
