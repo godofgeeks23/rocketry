@@ -15,6 +15,9 @@ const rocket_width = 20;
 const rocket_height = 150;
 const rocket_color = "white";
 
+const thrust_height = 20;
+const thrust_color = "orange";
+
 // set gravity for world
 const gravity = 0.4;
 
@@ -52,8 +55,8 @@ function setup() {
 
   thrustIndicator = {
     width: rocket_width,
-    height: 20,
-    color: "orange",
+    height: thrust_height,
+    color: thrust_color,
   };
 
   Matter.Runner.run(engine);
