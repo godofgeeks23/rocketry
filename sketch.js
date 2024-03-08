@@ -1,3 +1,5 @@
+// todo - seperate into classes and modules
+
 let rocket;
 let ground;
 let thrustIndicator;
